@@ -1,0 +1,70 @@
+<html>
+<head>
+<style>
+    #suggestions {
+    background: white;
+    border: 1px solid #ccc;
+    width: 250px;
+    position: absolute;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+</style>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="Search city..." autocomplete="off">
+<div id="suggestions"></div>
+<script>
+const input = document.getElementById("searchInput");
+const box = document.getElementById("suggestions");
+const API_KEY = "e2c995b4218f4a20802210416251012";
+
+input.addEventListener("input", async function () {
+    let query = input.value.trim();
+
+    if (query.length < 2) {
+        box.innerHTML = ""; 
+        return;
+    }
+
+    // API request
+    const url = `https://api.weatherapi.com/v1/search.json?key=${API_KEY}&q=${query}`;
+
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        box.innerHTML = ""; // clear old results
+
+        data.forEach(city => {
+            const div = document.createElement("div");
+            div.classList.add("suggestion-item");
+            div.textContent = `${city.name}, ${city.country}`;
+            
+            div.addEventListener("click", () => {
+                input.value = city.name;
+                box.innerHTML = "";
+            });
+
+            box.appendChild(div);
+        });
+
+    } catch (error) {
+        console.error("Error fetching autocomplete:", error);
+    }
+});
+
+</script>
+</body>
+
+</html>
