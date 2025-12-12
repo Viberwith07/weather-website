@@ -1,0 +1,151 @@
+<html lang="en">
+<head>
+
+    <title>Weather search</title>
+    <link rel="stylesheet" href="mainwebsite.css">
+    <script src="https://kit.fontawesome.com/f80df54df5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="main">
+        <div class="header" style="background-color: black;">
+            <div class="header-btn">
+               <a href="#city-search"><div class="box-btn" style="color: rgb(0, 255, 166);"> SEARCH A CITY</div></a>
+               <a href="#alert-box"> <div class="box-btn" style="color: rgb(0, 255, 166); padding-left: 40%;">ALERTS</div></a>
+               <a href="#temperature11"><div class="box-btn" style="color: rgb(0, 255, 166);">INFORMATION</div></a>
+               <a href="#links"><div class="box-btn" style="color: rgb(0, 255, 166); padding-right:  20%;">LINKS AND REFERENCES</div></a>
+               <div class="box-btn" style="color: rgb(0, 255, 166); padding-left: 10%; display: flex; "><i class="fa-solid fa-person" id="person"></i>
+                    <button id="logout" style="background-color: rgb(0, 255, 166); color: black; height: 20px; margin-top: 10px;">logout</button></div>
+            </div></div>
+        
+
+        <div id="main-box" style="background-color: rgb(255, 0, 183);">
+            <div class="search-box" >
+                <input id="city-search" type="text" placeholder="search a city" >
+                <button id="searchbtn">SEARCH</button>
+                <div id="time" style="color: rgb(137, 134, 134);">
+                    
+                    
+                </div>
+            </div> 
+            <div class="information-data">
+                <div  class="box" id="temperature">
+                   <div style="margin-top: 35px; padding: 10%;"><i class="fa-solid fa-temperature-empty"></i></div>
+                   <div><p style="font-size: 20px;margin-top:  40px; color: white" id="temp1"></p></div>
+                </div>
+                <div class="box" id="weather" style="text-align: center;">
+                    <div style="margin-top: 30px; padding: 10%;"><i class="fa-solid fa-cloud"></i></div></div>
+                <div class="box" id="pollen">
+                    <div style="margin-top: 30px; padding: 10%;">
+                    <i class="fa-solid fa-seedling"></i></div>
+                    <div><p style="font-size: 20px;
+                    margin-top:  40px; color: white;" id="pressure1"></p></div>
+                </div>
+                <div class="box"id="wind-speed">
+                    <div style="margin-top: 30px; padding: 10%;"><i class="fa-solid fa-wind"></i></div>
+                    <div><p style="font-size: 20px;
+                    margin-top:  40px; color: white;" id="wind-speed1"></p></div>
+                </div>
+                <div class="box" id="day">daytime</div>
+                <div class="box" id="precipitation">
+                    <div style="margin-top: 30px; padding: 10%;"><i class="fa-solid fa-cloud-rain"></i></div>
+                    <div><p style="font-size: 20px;margin-top:  40px; color: white" id="precipitation1"></p></div>
+                </div>
+                <div class="box" id="AQI">
+                    <div style="margin-top: 30px; padding: 10%;"><i class="fa-solid fa-lungs"></i></div>
+                    <div><p style="font-size: 20px;margin-top:  40px; color: white" id="AQI1"></p></div>
+                </div>
+                <div class="box" id="uv">
+                    <div style="margin-top: 30px;"><i class="fa-solid fa-sun"></i></div>
+                    <div><p style="font-size: 20px;margin-top:  40px; color: white" id="uv1"></p></div>
+                </div>
+                <div class="box" id="humidity">
+                    <div style="margin-top: 30px;"><i class="fa-solid fa-droplet"></i></div> 
+                    <div><p style="font-size: 20px;margin-top:  40px; color: white" id="humidity1"></p></div>
+                </div>
+
+            </div>
+            
+            <div id="alert-box" style="background-color: gray;">
+                <div id="alerts-up"></div>
+                <div id="alerts"><p>ALERTS</p></div>
+                <div id="headline">
+                    <div style="padding-left: 40% ;  background-color: black; color: rgb(0, 255, 166);"> <p>H</p>
+                        <p>E</p>
+                        <p>A</p>
+                        <p>D</p>
+                        <p>L</p>
+                        <p>I</p>
+                        <p>N</p>
+                        <p>E</p>
+                        
+                    </div>
+                    <div id="headine body"></div>
+                </div>
+                <div id="alert-specifictaions">
+                    <div class="box" id="severity">severity</div>
+                    <div class="box" id="urgency">urgency</div>
+                    <div class="box"id="expires">expires</div>
+                    <div class="box" id="certainity">certainity</div>
+                    <div class="box" id="effective">effective</div>
+                    <div class="box" id="areas"> AFFECTED</div>
+                    <div class="box" id="instructions">instructions</div>
+                    <div class="box" id="description">description</div>
+                    <div class="box" id="note">note</div>
+                
+                </div>
+            
+
+            </div>
+        </div>
+        <div class="data-check" style="background-color: burlywood;">
+            <div class="head-data-check"><p>INFORMATION-WORTH KNOWING</p></div>
+            
+            <div class="information-data">
+                <div  class="box" id="temperature11">
+                   <div style="margin-top: 30px;"><i class="fa-solid fa-temperature-empty"></i></div>
+                   <div><p style="font-size: 20px;margin-top:  40px; color: white" id="temp1"></p></div>
+                </div>
+                <div class="box" id="weather">
+
+                    WETAHER CONDITION</div>
+                <div class="box" id="pollen11">
+                    <div style="margin-top: 30px;">
+                    <i class="fa-solid fa-seedling"></i></div>
+                    <div><p style="font-size: 20px;
+                    margin-top:  40px; color: white;" id="pollen1"></p></div>
+                </div>
+                <div class="box"id="wind-speed11">
+                    <div style="margin-top: 30px;"><i class="fa-solid fa-wind"></i></div>
+                    <div><p style="font-size: 20px;
+                    margin-top:  40px; color: white;" id="wind-speed1"></p></div>
+                </div>
+                <div class="box" id="day">daytime</div>
+                <div class="box" id="precipitation11">
+                    <div style="margin-top: 30px;"><i class="fa-solid fa-cloud-rain"></i></div>
+                    <div><p style="font-size: 20px;margin-top:  40px; color: white" id="precipitation1"></p></div>
+                </div>
+                <div class="box" id="AQI11">
+                    <div style="margin-top: 30px;"><i class="fa-solid fa-lungs"></i></div>
+                    <div><p style="font-size: 20px;margin-top:  40px; color: white" id="AQI1"></p></div>
+                </div>
+                <div class="box" id="uv11">
+                    <div style="margin-top: 30px;"><i class="fa-solid fa-sun"></i></div>
+                    <div><p style="font-size: 20px;margin-top:  40px; color: white" id="uv1"></p></div>
+                </div>
+                <div class="box" id="humidity11">
+                    <div style="margin-top: 30px;"><i class="fa-solid fa-droplet"></i></div> 
+                    <div><p style="font-size: 20px;margin-top:  40px; color: white" id="humidity1"></p></div>
+                </div>
+            </div>
+
+
+
+        </div> 
+        <div class="footer"  id="links" style=" background-image: linear-gradient(to bottom right, rgba(0, 255, 166, 0.576), black);"></div>
+        </div>
+   
+   <script src="mainwebsite.js"></script>
+</body>
+
+</html>

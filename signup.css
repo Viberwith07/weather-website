@@ -1,0 +1,99 @@
+body{
+    margin:0px;
+    padding: 0px 0px 0px 0px;
+}
+#my-video{
+        
+     min-height: 100%;
+    min-width: 100%; 
+    bottom: 0;
+    right: 0;
+    position: fixed;
+   opacity: 0.6;
+        
+}
+.login-box{
+   
+    width: 90%;
+    max-width: 450px;
+    height: 90%;
+    height: 450px;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 50px 50px 50px 50px;
+    
+}
+
+
+.input-fields-box{
+    max-width: 450px;
+    max-height: 291.56px;
+    width: 90%;
+    height: 90%;
+      
+}
+#sign-up{
+    margin-bottom: 100px;
+    background-color: aquamarine;
+    margin-right: 3px;
+
+}
+.input-fields-pass,.input-fields-phn{
+    margin: 12px 0px ;
+
+    background-color: rgba(230, 226, 226, 0.814);
+    border-width: 0px;
+    display: flex;
+    align-content: center;
+    text-align: end;
+}
+#input-fields{
+    margin: 12px 0px ;
+
+    background-color: rgba(230, 226, 226, 0.814);
+    border-width: 0px;
+    display: flex;
+    align-content: center;
+    text-align: end;
+
+}
+.input-fields-cpass{
+    margin: 12px 0px ;
+
+    background-color: rgba(230, 226, 226, 0.814);
+    border-width: 0px;
+    display: flex;
+    align-content: center;
+    text-align: end;
+}
+input{
+padding: 5px 5px;
+background-color: transparent;
+border: 0px;
+width: 100%;
+}
+i{
+    align-self: flex-start;
+    margin-top: 3px;
+}
+#lost{
+    text-align: left;
+    font-size: 10px;
+}
+#buttons{
+    margin-top: 30px;
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 10px;
+    
+}
+button{
+    background-color: aquamarine;
+    color: black;
+}
