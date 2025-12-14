@@ -66,7 +66,7 @@ document.getElementById("searchbtn").addEventListener("click", async function a(
     
 
     if (icon1=="day"){
-       document.getElementById("main-box").style.backgroundColor="rgba(0, 195, 255, 1)";
+       document.getElementById("main-box").style.backgroundColor="rgb(0, 255, 164)";
 
     }
     if (icon1=="night"){
@@ -100,7 +100,7 @@ document.getElementById("searchbtn").addEventListener("click", async function a(
     .then(data => {
         if (!data.alerts || data.alerts.alert.length === 0) {
         document.getElementById("headine-body").innerHTML =
-           ` <p style="text-align: centre; font-size: 40px;"> "No weather alerts for this location"</p>`;
+           ` <p style="text-align: centre; font-size: 40px; margin-top:10%; margin-left:20%"> "No weather alerts for this location"</p>`;
         return;
         }
        
@@ -147,8 +147,8 @@ document.getElementById("searchbtn").addEventListener("click", async function a(
     certainityEl.innerHTML=`CERTAINITY: <p>${data.alerts.alert[0].certainty}</p>`
     effectiveEl.innerHTML=`EFFECTIVE: <p> ${data.alerts.alert[0].effective} </p>`
     expiresEl.innerHTML=`EXPIRES : <p> ${data.alerts.alert[0].expires} </p> `
-    areasEl.innerText=`AREAS: <p> ${data.alerts.alert[0].areas}  </p>  `
-    instructionsEl.innerText=`INSTRUCTIONS: <p> ${data.alerts.alert[0].instruction} </p>`
+    areasEl.innerHTML=`AREAS: <p> ${data.alerts.alert[0].areas}  </p>  `
+    instructionsEl.innerHTML=`INSTRUCTIONS: <p> ${data.alerts.alert[0].instruction} </p>`
     noteEl.innerHTML=``
 
     descriptionEl.innerHTML=``
