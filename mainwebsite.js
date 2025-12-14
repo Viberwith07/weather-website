@@ -63,6 +63,8 @@ document.getElementById("searchbtn").addEventListener("click", async function a(
     <div>
     <img src="${icon1}.jpg"></div>`
 
+    
+
     if (icon1=="day"){
        document.getElementById("main-box").style.backgroundColor="rgba(0, 195, 255, 1)";
 
@@ -89,6 +91,90 @@ document.getElementById("searchbtn").addEventListener("click", async function a(
 document.getElementById("logout").addEventListener("click",function(){
     window.location.replace("login.html")
 })
+
+document.getElementById("searchbtn").addEventListener("click", async function a(){
+    let query =document.querySelector("#city-search").value;
+    const url = `https://api.weatherapi.com/v1/alerts.json?key=${API_KEY}&q=${query}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        if (!data.alerts || data.alerts.alert.length === 0) {
+        document.getElementById("headine-body").innerHTML =
+           ` <p style="text-align: centre; font-size: 40px;"> "No weather alerts for this location"</p>`;
+        return;
+        }
+       
+        
+    document.getElementById("severity").classList.remove("box")
+    document.getElementById("severity").classList.add("box-click")
+    document.getElementById("urgency").classList.remove("box")
+    document.getElementById("urgency").classList.add("box-click")
+    document.getElementById("expires").classList.remove("box")
+    document.getElementById("expires").classList.add("box-click")
+    document.getElementById("certainity").classList.remove("box")
+    document.getElementById("certainity").classList.add("box-click")
+    document.getElementById("effective").classList.remove("box")
+    document.getElementById("effective").classList.add("box-click")
+    document.getElementById("areas").classList.remove("box")
+    document.getElementById("areas").classList.add("box-click")
+    document.getElementById("instructions").classList.remove("box")
+    document.getElementById("instructions").classList.add("box-click")
+    document.getElementById("description").classList.remove("box")
+    document.getElementById("description").classList.add("box-click")
+    document.getElementById("note").classList.remove("box")
+    document.getElementById("note").classList.add("box-click")
+
+   
+    
+    var severityEl =document.getElementById("severity")
+    var urgencyEl =document.getElementById("urgency")
+    var expiresEl =document.getElementById("expires")
+    var certainityEl =document.getElementById("certainity")
+    var effectiveEl =document.getElementById("effective")
+    var areasEl =document.getElementById("areas")
+    var instructionsEl =document.getElementById("instructions")
+    var descriptionEl=document.getElementById("description")
+    var noteEl=document.getElementById("note")
+    var headlineEl=document.getElementById("headine-body")
+    let typeofalert=(data.alerts.alert[0].severity =="high") ? "red":"normal";
+   
+    
+   
+    
+
+    severityEl.innerHTML=` SEVERITY: <p>${data.alerts.alert[0].severity}</p> `
+    urgencyEl.innerHTML=`URGENCY: <p> ${data.alerts.alert[0].urgency} </p>`
+    certainityEl.innerHTML=`CERTAINITY: <p>${data.alerts.alert[0].certainty}</p>`
+    effectiveEl.innerHTML=`EFFECTIVE: <p> ${data.alerts.alert[0].effective} </p>`
+    expiresEl.innerHTML=`EXPIRES : <p> ${data.alerts.alert[0].expires} </p> `
+    areasEl.innerText=`AREAS: <p> ${data.alerts.alert[0].areas}  </p>  `
+    instructionsEl.innerText=`INSTRUCTIONS: <p> ${data.alerts.alert[0].instruction} </p>`
+    noteEl.innerHTML=``
+
+    descriptionEl.innerHTML=``
+
+    if (typeofalert=="red"){
+       document.getElementById("alert-box").style.backgroundColor="rgba(255, 0, 0, 1)";
+
+    }
+    if (icon1=="normal"){
+       document.getElementById("alert-box").style.backgroundColor="rgba(0, 0, 0, 1)";
+
+    }
+    headlineEl.innerHTML=`<p> style:"font-size=20px;"${data.alerts.alert[0].headline} </p>`
+    console.log(typeofalert)
+                    
+
+
+
+    })
+
+    .catch(err =>{
+        console.log("error in catching the api")
+       
+        
+
+    })
         
 
 
@@ -96,25 +182,7 @@ document.getElementById("logout").addEventListener("click",function(){
 
 
 
+})
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-    
-
-
-    
-   
 

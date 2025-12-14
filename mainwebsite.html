@@ -6,6 +6,9 @@
     <script src="https://kit.fontawesome.com/f80df54df5.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <video  autoplay muted loop id="background-video">
+            <source src="wetherbg.mp4" type="video/mp4">
+        </video>
 
     <div class="main">
         <div class="header" style="background-color: black;">
@@ -19,7 +22,10 @@
             </div></div>
         
 
-        <div id="main-box" style="background-color: rgb(255, 0, 183);">
+        <div id="main-box">
+             <video  autoplay muted loop id="background-video">
+               <source src="wetherbg.mp4" type="video/mp4">
+             </video>
             <div class="search-box" >
                 <input id="city-search" type="text" placeholder="search a city" >
                 <button id="searchbtn">SEARCH</button>
@@ -67,7 +73,8 @@
             </div>
             
             <div id="alert-box" style="background-color: gray;">
-                <div id="alerts-up"></div>
+                
+                
                 <div id="alerts"><p>ALERTS</p></div>
                 <div id="headline">
                     <div style="padding-left: 40% ;  background-color: black; color: rgb(0, 255, 166);"> <p>H</p>
@@ -80,7 +87,7 @@
                         <p>E</p>
                         
                     </div>
-                    <div id="headine body"></div>
+                    <div id="headine-body"></div>
                 </div>
                 <div id="alert-specifictaions">
                     <div class="box" id="severity">severity</div>

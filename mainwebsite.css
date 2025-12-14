@@ -2,7 +2,16 @@ body{
     margin: 0px 0px 0px 0px;
     padding-top: 80px;
     height: 3000px;
-    background-color: black;
+
+}
+#background-video {
+  position: fixed; 
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%; 
+  z-index: -1; 
+  object-fit: cover;
 }
 .main{
     display: grid;
@@ -30,7 +39,8 @@ body{
 
 #alert-box{
     display: grid;
-    grid-template-rows:  0.6fr 0.1fr 0.5fr 2fr;
+    grid-template-rows:   0.1fr 0.5fr 2fr;
+    margin-top: 40px;
     
 
 }
@@ -74,7 +84,7 @@ i{
 .box:hover, .box-click:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 254, 254);
     cursor: pointer;
 }
 .box:hover i, .box-click:hover i {
@@ -160,7 +170,7 @@ i{
 .box-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;}
 #person {
     font-size: 20px;
@@ -202,9 +212,7 @@ overflow: hidden;
 .alerts-box{
     background-color: grey;
 }
-#alerts-up{
-   background-color: aliceblue;
-}
+
 #alerts{
     text-align: center;
     color: rgb(255, 0, 0);
@@ -215,4 +223,7 @@ overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 5fr;
     
+}
+#alerts-up{
+    background-color: rgb(0, 136, 255);
 }
